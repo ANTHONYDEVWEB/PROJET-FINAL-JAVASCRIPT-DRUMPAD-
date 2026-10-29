@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Raleway:400,400i,700");
+/* @import url("https://fonts.googleapis.com/css?family=Raleway:400,400i,700");
 
 * {
   padding: 0;
@@ -70,4 +70,182 @@ h1 {
   color: #fd746c;
   transform: scale(1.5);
   transition: all 300ms cubic-bezier(0.075, 0.82, 0.165, 1);
+} */
+/* Fond sombre et titre lumineux */
+@import url("https://fonts.googleapis.com/css?family=Raleway:400,400i,700");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 24px 12px;
+  overflow: auto;
+  font-family: Raleway, sans-serif;
+  background: linear-gradient(135deg, #151323, #25213b);
+}
+
+h1 {
+  color: #fff8ff;
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  letter-spacing: 6px;
+  text-align: center;
+  text-shadow: 0 0 14px #a66cff;
+}
+
+.pad {
+  width: min(400px, 88vw);
+  aspect-ratio: 1;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-rows: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  padding: 20px;
+  background: #211e32;
+  border: 3px solid #51466c;
+  box-shadow: 4px 4px 0 #100e19;
+}
+
+.key {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-width: 0;
+  color: #fff8ff;
+  background: #2b2840;
+  border: 3px solid var(--pad-color);
+  box-shadow:
+    0 0 9px var(--pad-glow),
+    4px 4px 0 #100e19;
+  font-family: inherit;
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
+  user-select: none;
+  cursor: pointer;
+  transition:
+    transform 160ms ease,
+    background-color 160ms ease,
+    border-color 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.key kbd {
+  color: inherit;
+  font: inherit;
+}
+
+.sound {
+  display: block;
+  margin-top: 7px;
+  color: var(--pad-color);
+  font-size: 14px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+/* Couleur du contour et du halo de chaque touche */
+.key:nth-child(1) {
+  --pad-color: #ff4f7b;
+  --pad-glow: rgba(255, 79, 123, 0.55);
+}
+
+.key:nth-child(2) {
+  --pad-color: #ff884d;
+  --pad-glow: rgba(255, 136, 77, 0.55);
+}
+
+.key:nth-child(3) {
+  --pad-color: #ffd84d;
+  --pad-glow: rgba(255, 216, 77, 0.55);
+}
+
+.key:nth-child(4) {
+  --pad-color: #a8ed52;
+  --pad-glow: rgba(168, 237, 82, 0.55);
+}
+
+.key:nth-child(5) {
+  --pad-color: #40e0b5;
+  --pad-glow: rgba(64, 224, 181, 0.55);
+}
+
+.key:nth-child(6) {
+  --pad-color: #42c9ff;
+  --pad-glow: rgba(66, 201, 255, 0.55);
+}
+
+.key:nth-child(7) {
+  --pad-color: #6685ff;
+  --pad-glow: rgba(102, 133, 255, 0.55);
+}
+
+.key:nth-child(8) {
+  --pad-color: #b26aff;
+  --pad-glow: rgba(178, 106, 255, 0.55);
+}
+
+.key:nth-child(9) {
+  --pad-color: #ff65d4;
+  --pad-glow: rgba(255, 101, 212, 0.55);
+}
+
+/* Halo plus lumineux au survol */
+.key:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 0 16px var(--pad-glow),
+    0 0 26px var(--pad-glow),
+    4px 4px 0 var(--pad-color);
+}
+
+/* Apparence de la touche pendant la lecture du son */
+.key.playing {
+  color: #171323;
+  background: var(--pad-color);
+  border-color: #fff8ff;
+  box-shadow: 0 0 22px var(--pad-glow);
+  transform: translate(4px, 4px);
+}
+
+.key.playing .sound {
+  color: #171323;
+}
+
+/* Les éléments audio restent invisibles, mais les sons fonctionnent */
+audio {
+  display: none;
+}
+
+/* Ajustement pour les petits écrans */
+@media (max-width: 480px) {
+  .pad {
+    gap: 7px;
+    padding: 14px;
+  }
+
+  .key {
+    font-size: 17px;
+  }
+
+  .sound {
+    font-size: 12px;
+  }
 }
