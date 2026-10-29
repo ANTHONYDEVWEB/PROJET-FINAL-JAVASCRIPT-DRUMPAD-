@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Drum pad">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#22283a"/>
+      <stop offset="1" stop-color="#111522"/>
+    </linearGradient>
+    <linearGradient id="active" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ff6b6b"/>
+      <stop offset="1" stop-color="#ff3d81"/>
+    </linearGradient>
+  </defs>
+  <rect x="2" y="2" width="60" height="60" rx="15" fill="url(#bg)"/>
+  <g fill="#394158">
+    <rect x="11" y="11" width="12" height="12" rx="3"/>
+    <rect x="26" y="11" width="12" height="12" rx="3"/>
+    <rect x="41" y="11" width="12" height="12" rx="3"/>
+    <rect x="11" y="26" width="12" height="12" rx="3"/>
+    <rect x="26" y="26" width="12" height="12" rx="3"/>
+    <rect x="41" y="26" width="12" height="12" rx="3"/>
+    <rect x="11" y="41" width="12" height="12" rx="3"/>
+    <rect x="26" y="41" width="12" height="12" rx="3"/>
+    <rect x="41" y="41" width="12" height="12" rx="3"/>
+  </g>
+  <rect x="26" y="26" width="12" height="12" rx="3" fill="url(#active)"/>
+  <circle cx="32" cy="32" r="2" fill="#fff" opacity=".95"/>
+</svg>
