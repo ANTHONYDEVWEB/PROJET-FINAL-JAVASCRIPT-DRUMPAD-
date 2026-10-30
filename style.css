@@ -73,7 +73,6 @@ h1 {
 } */
 /* Fond sombre et titre lumineux */
 @import url("https://fonts.googleapis.com/css?family=Raleway:400,400i,700");
-
 * {
   box-sizing: border-box;
   margin: 0;
@@ -110,10 +109,10 @@ h1 {
 
 .pad {
   width: min(400px, 88vw);
-  aspect-ratio: 1;
+  aspect-ratio: 0.77;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  grid-template-rows: repeat(3, minmax(0, 1fr));
+  grid-template-rows: repeat(4, minmax(0, 1fr));
   gap: 10px;
   padding: 20px;
   background: #211e32;
@@ -207,7 +206,6 @@ h1 {
   --pad-glow: rgba(255, 101, 212, 0.55);
 }
 
-/* Halo plus lumineux au survol */
 .key:hover {
   transform: translateY(-2px);
   box-shadow:
@@ -216,7 +214,6 @@ h1 {
     4px 4px 0 var(--pad-color);
 }
 
-/* Apparence de la touche pendant la lecture du son */
 .key.playing {
   color: #171323;
   background: var(--pad-color);
@@ -227,6 +224,74 @@ h1 {
 
 .key.playing .sound {
   color: #171323;
+}
+
+/* Rangée REC / PLAY à l'intérieur du cadre */
+.boutons-enregistrement {
+  grid-column: 1 / 4;
+  grid-row: 4;
+  width: 100%;
+  min-width: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.rec-button,
+.play-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  padding: 0;
+  border: 3px solid;
+  border-radius: 0;
+  background: #2b2840;
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    transform 160ms ease,
+    box-shadow 160ms ease,
+    background-color 160ms ease;
+}
+
+.rec-button {
+  grid-column: 1;
+  color: #ff4f7b;
+  border-color: #ff4f7b;
+  box-shadow:
+    0 0 9px rgba(255, 79, 123, 0.55),
+    4px 4px 0 #100e19;
+}
+
+.play-button {
+  grid-column: 3;
+  color: #40e0b5;
+  border-color: #40e0b5;
+  box-shadow:
+    0 0 9px rgba(64, 224, 181, 0.55),
+    4px 4px 0 #100e19;
+}
+
+.rec-button:hover,
+.play-button:hover {
+  transform: translateY(-2px);
+}
+
+.rec-button.is-recording {
+  color: #171323;
+  background: #ff4f7b;
+  box-shadow: 0 0 22px rgba(255, 79, 123, 0.8);
+}
+
+.play-button.is-playing {
+  color: #171323;
+  background: #40e0b5;
+  box-shadow: 0 0 22px rgba(64, 224, 181, 0.8);
 }
 
 /* Les éléments audio restent invisibles, mais les sons fonctionnent */
@@ -247,5 +312,9 @@ audio {
 
   .sound {
     font-size: 12px;
+  }
+
+  .boutons-enregistrement {
+    gap: 7px;
   }
 }
