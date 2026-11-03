@@ -1,4 +1,10 @@
-const TRANSITION_TIME = 180;
+
+// 1. On cible l'élément où est stockée la variable (:root correspond à document.documentElement)
+// const rootStyles = );
+// 2. On récupère la valeur textuelle (ex: "1000ms")
+// 3. On extrait le nombre pour obtenir 1000
+const TRANSITION_TIME = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--transition-time').trim());
+
 let estEntrainDeRec = false;
 
 let sonsEnregistres = [];
@@ -37,7 +43,7 @@ function handleKeyup(event) {
 
   removeTransition(key);
 }
- // Trouver un moyen de récuperer la div concerné par l'évènement et non pas les enfant kbd et p
+// Trouver un moyen de récuperer la div concerné par l'évènement et non pas les enfant kbd et p
 function handleClick(event) {
   let pad = event.target.closest(".key");
 

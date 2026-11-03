@@ -81,7 +81,7 @@ h1 {
 }
 
 :root {
-  --transition-time: 1000;
+  --transition-time: 300;
 }
 
 html,
@@ -143,7 +143,7 @@ h1 {
   text-align: center;
   user-select: none;
   cursor: pointer;
-  transition: all var(--transition-time)ms ease;
+  transition: all calc(var(--transition-time) * 1ms) ease;
 }
 
 .key kbd {
@@ -253,7 +253,7 @@ h1 {
   font-size: 18px;
   font-weight: 700;
   cursor: pointer;
-  transition: all var(--transition-time)ms ease;
+  transition: all calc(var(--transition-time) * 1ms) ease;
 }
 
 .rec-button {
