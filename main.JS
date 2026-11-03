@@ -37,10 +37,15 @@ function handleKeyup(event) {
 
   removeTransition(key);
 }
-
+ // Trouver un moyen de récuperer la div concerné par l'évènement et non pas les enfant kbd et p
 function handleClick(event) {
-  // Trouver un moyen de récuperer la div concerné par l'évènement et non pas les enfant kbd et p
-  let key = event.target.dataset.key;
+  let pad = event.target.closest(".key");
+
+  if (!pad || !pad.dataset.key) {
+    return;
+  }
+
+  let key = pad.dataset.key;
 
   playSound(key);
 
