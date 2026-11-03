@@ -17,7 +17,6 @@ let touches = document.querySelectorAll(".key");
 touches.forEach((touche) => {
   touche.addEventListener("click", handleClick);
 });
-
 // let pads = document.querySelectorAll(".key");
 
 // pads.forEach((pad) => {
